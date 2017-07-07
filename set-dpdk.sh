@@ -6,4 +6,5 @@ export DPDK_BUILD=$DPDK_DIR/$DPDK_TARGET
 
 sudo modprobe vfio-pci
 $DPDK_DIR/tools/dpdk-devbind.py --bind=vfio-pci enp5s0f0
+$DPDK_DIR/tools/dpdk-devbind.py --bind=vfio-pci enp5s0f1
 $DPDK_DIR/tools/dpdk-devbind.py --status
