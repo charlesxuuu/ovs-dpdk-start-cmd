@@ -6,10 +6,8 @@ export DPDK_TARGET=x86_64-native-linuxapp-gcc
 export DPDK_BUILD=$DPDK_DIR/$DPDK_TARGET
 
 mkdir -p /mnt/huge
-mkdir -p /mnt/huge_2mb
 
 mount -t hugetlbfs hugetlbfs /mnt/huge
-mount -t hugetlbfs none /mnt/huge_2mb -o pagesize=2MB
 
 modprobe vfio-pci
 chmod a+x /dev/vfio
