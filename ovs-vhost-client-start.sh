@@ -7,3 +7,7 @@ ovs-vsctl add-port ovsbr0 vhost-client-1 -- set Interface vhost-client-1 type=dp
 
 ovs-vsctl add-port ovsbr1 vhost-client-2 -- set Interface vhost-client-2 type=dpdkvhostuserclient options:vhost-server-path=$VHOST_USER_SOCKET_PATH/vhost-client-2
 
+ovs-vsctl add-port ovsbr0 vhost-client-3 -- set Interface vhost-client-3 type=dpdkvhostuserclient options:vhost-server-path=$VHOST_USER_SOCKET_PATH/vhost-client-3
+
+ovs-vsctl add-port ovsbr1 vhost-client-4 -- set Interface vhost-client-4 type=dpdkvhostuserclient options:vhost-server-path=$VHOST_USER_SOCKET_PATH/vhost-client-4
+
