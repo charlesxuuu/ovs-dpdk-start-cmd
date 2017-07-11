@@ -5,6 +5,9 @@ export DPDK_DIR=/home/chix/dpdk/dpdk-stable-16.11.2
 export DPDK_TARGET=x86_64-native-linuxapp-gcc
 export DPDK_BUILD=$DPDK_DIR/$DPDK_TARGET
 
+
+mount -t hugetlbfs -o pagesize=1G none /dev/hugepages
+
 modprobe vfio-pci
 chmod a+x /dev/vfio
 chmod 0666 /dev/vfio/*

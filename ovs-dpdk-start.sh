@@ -12,6 +12,9 @@ ovs-vsctl --no-wait set Open_vSwitch . other_config:dpdk-init=true
 
 # multiple pmd threads pinned to CPU cores
 ovs-vsctl set Open_vSwitch . other_config:pmd-cpu-mask=0x6
+ovs-vsctl set Open_vSwitch . other_config:dpdk-socket-mem=1024
+ovs-vsctl set Open_vSwitch . other_config:dpdk-lcore-mask=0xf
+
 
 ovs-vsctl --may-exist add-br ovsbr0 -- set bridge ovsbr0 datapath_type=netdev
 ovs-vsctl --may-exist add-br ovsbr1 -- set bridge ovsbr1 datapath_type=netdev
