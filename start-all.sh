@@ -12,5 +12,5 @@ sleep 1
 #sudo ifconfig ovsbr0 up
 #sudo ifconfig ovsbr1 192.168.101.102
 #sudo ifconfig ovsbr1 up
-sudo bash ./set-ovsbr-ip.sh
+sudo bash ./ovsbr-ip.sh
 
