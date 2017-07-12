@@ -7,13 +7,20 @@ export DPDK_BUILD=$DPDK_DIR/$DPDK_TARGET
 
 mkdir -p /mnt/huge
 
+sysctl -w vm.nr_hugepages=4096
 mount -t hugetlbfs hugetlbfs /mnt/huge
 
 modprobe vfio-pci
+#modprobe igb_uio
+modprobe uio_pci_generic
 chmod a+x /dev/vfio
 chmod 0666 /dev/vfio/*
 
 
 $DPDK_DIR/tools/dpdk-devbind.py --bind=vfio-pci enp5s0f0
 $DPDK_DIR/tools/dpdk-devbind.py --bind=vfio-pci enp5s0f1
+#$DPDK_DIR/tools/dpdk-devbind.py --bind=uio_pci_generic enp5s0f0
+#$DPDK_DIR/tools/dpdk-devbind.py --bind=uio_pci_generic enp5s0f1
+
+
 $DPDK_DIR/tools/dpdk-devbind.py --status
