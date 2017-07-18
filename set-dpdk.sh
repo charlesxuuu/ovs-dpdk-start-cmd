@@ -6,8 +6,8 @@ export DPDK_TARGET=x86_64-native-linuxapp-gcc
 export DPDK_BUILD=$DPDK_DIR/$DPDK_TARGET
 
 mkdir -p /mnt/huge
-sysctl -w vm.nr_hugepages=4096
-mount -t hugetlbfs hugetlbfs /mnt/huge
+#sysctl -w vm.nr_hugepages=4096
+mount -t hugetlbfs -o pagesize=1G none /mnt/huge
 
 modprobe vfio-pci
 #modprobe igb_uio

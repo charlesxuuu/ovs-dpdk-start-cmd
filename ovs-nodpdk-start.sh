@@ -12,16 +12,18 @@ ovs-vsctl del-br ovsbr1
 
 ovs-vsctl --may-exist  add-br ovsbr0
 ovs-vsctl set bridge ovsbr0 stp_enable=true
-ovs-vsctl --may-exist  add-port ovsbr0 enp5s0f0
+ovs-vsctl del-port ovsbr0 enp5s0f0
+ifconfig enp5s0f0 up
+ovs-vsctl add-port ovsbr0 enp5s0f0
+
+
 ovs-vsctl --may-exist  add-br ovsbr1
 ovs-vsctl set bridge ovsbr1 stp_enable=true
-ovs-vsctl --may-exist  add-port ovsbr1 enp5s0f1
+ovs-vsctl del-port ovsbr1 enp5s0f1
+ifconfig enp5s0f1 up
+ovs-vsctl add-port ovsbr1 enp5s0f1
 
 ifconfig ovsbr0 up
 ifconfig ovsbr1 up
 
-ifconfig enp5s0f0 up
-ifconfig enp2s0f0 up
-ifconfig ovsbr0 192.168.100.2
-ifconfig ovsbr1 192.168.101.2
-
+sudo bash ./ovsbr-ip.sh

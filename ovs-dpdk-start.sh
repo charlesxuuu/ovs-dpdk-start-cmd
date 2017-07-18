@@ -14,7 +14,7 @@ ovs-vsctl --no-wait set Open_vSwitch . other_config:dpdk-init=true
 # run on core 0 and core 2 --- 0x101
 ovs-vsctl set Open_vSwitch . other_config:pmd-cpu-mask=0x40004
 # allocate 4096M on NUMA node 0, 0M on NUMA node 1
-ovs-vsctl set Open_vSwitch . other_config:dpdk-socket-mem="4096,0"
+ovs-vsctl set Open_vSwitch . other_config:dpdk-socket-mem="4096,4096"
 #
 ovs-vsctl set Open_vSwitch . other_config:dpdk-lcore-mask=0x100010
 
