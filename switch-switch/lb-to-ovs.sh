@@ -35,4 +35,4 @@ ifconfig ovsbr0 192.168.100.102
 ifconfig ovsbr1 192.168.101.102
 ifconfig ovsbr0 up
 ifconfig ovsbr1 up
-bash ../set-eth-speed.sh
+#bash ../set-eth-speed.sh

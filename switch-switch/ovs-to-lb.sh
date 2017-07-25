@@ -36,4 +36,3 @@ ifconfig lbbr1 192.168.101.102
 ifconfig lbbr0 up
 ifconfig lbbr1 up
 
-sudo bash ../set-eth-speed.sh
