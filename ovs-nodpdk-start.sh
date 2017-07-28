@@ -27,3 +27,12 @@ ifconfig ovsbr0 up
 ifconfig ovsbr1 up
 
 sudo bash ./ovsbr-ip.sh
+
+
+sudo ethtool -K enp5s0f0 tso off
+sudo ethtool -K enp5s0f0 gso off
+sudo ethtool -K enp5s0f0 gro off
+
+sudo ethtool -K enp5s0f1 tso off
+sudo ethtool -K enp5s0f1 gso off
+sudo ethtool -K enp5s0f1 gro off
